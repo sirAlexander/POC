@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static com.shikanga.sort.PersonComparator.*;
+
 /**
  *
  * @author sir
@@ -30,7 +32,7 @@ public class TestMultipleSort {
         personList.add( new Person(4, "Mark"));
         personList.add( new Person(5, "John"));
         
-        Collections.sort(personList, PersonComparator.decending(PersonComparator.getComparator( PersonComparator.NAME_SORT, PersonComparator.ID_SORT )));
+        Collections.sort( personList, decending( getComparator( NAME_SORT, ID_SORT )));
         
         for ( Person p : personList ){
             System.out.println( " " + p.getId() + " " + p.getName() );
